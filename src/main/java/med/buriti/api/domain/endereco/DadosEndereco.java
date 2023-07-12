@@ -3,7 +3,7 @@ package med.buriti.api.domain.endereco;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Pattern;
 
-public record DadosEnderecoDto(
+public record DadosEndereco(
         @NotBlank
         String logradouro,
         @NotBlank

@@ -6,10 +6,10 @@ import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.NotNull;
-import med.buriti.api.domain.endereco.DadosEnderecoDto;
+import med.buriti.api.domain.endereco.DadosEndereco;
 import org.hibernate.validator.constraints.br.CPF;
 
-public record DadosCadastroPacienteDto(
+public record DadosCadastroPaciente(
         @NotEmpty
         String nome,
         @NotEmpty
@@ -20,6 +20,6 @@ public record DadosCadastroPacienteDto(
         @NotEmpty
         @CPF
         String cpf,
-        @NotNull @Valid DadosEnderecoDto endereco
+        @NotNull @Valid DadosEndereco endereco
 ){}
 

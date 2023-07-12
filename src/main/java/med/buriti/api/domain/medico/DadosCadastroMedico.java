@@ -2,9 +2,9 @@ package med.buriti.api.domain.medico;
 
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.*;
-import med.buriti.api.domain.endereco.DadosEnderecoDto;
+import med.buriti.api.domain.endereco.DadosEndereco;
 
-public record DadosCadastroMedicoDto(
+public record DadosCadastroMedico(
         @NotEmpty
         String nome,
         @NotEmpty
@@ -15,7 +15,7 @@ public record DadosCadastroMedicoDto(
         String crm,
         @NotNull
         Especialidade especialidade,
-        @NotNull @Valid DadosEnderecoDto endereco,
+        @NotNull @Valid DadosEndereco endereco,
         @NotBlank
         String telefone
 ){}

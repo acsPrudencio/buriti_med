@@ -1,12 +1,12 @@
 package med.buriti.api.domain.paciente;
 
 import jakarta.validation.constraints.NotNull;
-import med.buriti.api.domain.endereco.DadosEnderecoDto;
+import med.buriti.api.domain.endereco.DadosEndereco;
 
-public record DadosAtualizacaoPacienteDto(
+public record DadosAtualizacaoPaciente(
         @NotNull
         Long id,
         String nome,
         String telefone,
-        DadosEnderecoDto endereco) {
+        DadosEndereco endereco) {
 }
