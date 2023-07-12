@@ -1,21 +1,26 @@
 package med.buriti.api.domain.medico;
 
 import jakarta.validation.Valid;
-import jakarta.validation.constraints.*;
+import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Pattern;
 import med.buriti.api.domain.endereco.DadosEndereco;
 
 public record DadosCadastroMedico(
-        @NotEmpty
+        @NotBlank(message = "{nome.obrigatorio}")
         String nome,
-        @NotEmpty
-        @Email
+        @NotBlank(message = "{email.obrigatorio}")
+        @Email(message = "{email.invalido}")
         String email,
-        @NotEmpty
-        @Pattern(regexp = "\\d{4,6}")
+        @NotBlank(message = "{crm.obrigatorio}")
+        @Pattern(regexp = "\\d{4,6}", message = "{crm.invalido}")
         String crm,
-        @NotNull
+        @NotNull(message = "{especialidade.obrigatoria}")
         Especialidade especialidade,
-        @NotNull @Valid DadosEndereco endereco,
-        @NotBlank
+        @NotNull(message = "{endereco.obrigatorio}")
+        @Valid DadosEndereco endereco,
+        @NotBlank(message = "{telefone.obrigatorio}")
         String telefone
-){}
+) {
+}

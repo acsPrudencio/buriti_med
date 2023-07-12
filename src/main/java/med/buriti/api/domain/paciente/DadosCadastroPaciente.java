@@ -10,16 +10,17 @@ import med.buriti.api.domain.endereco.DadosEndereco;
 import org.hibernate.validator.constraints.br.CPF;
 
 public record DadosCadastroPaciente(
-        @NotEmpty
+        @NotBlank(message = "{nome.obrigatorio}")
         String nome,
-        @NotEmpty
-        @Email
+        @NotBlank(message = "{email.obrigatorio}")
+        @Email(message = "{email.invalido}")
         String email,
-        @NotBlank
+        @NotBlank(message = "{telefone.obrigatorio}")
         String telefone,
-        @NotEmpty
-        @CPF
+        @NotBlank(message = "{cpf.obrigatorio}")
+        @CPF(message = "{cpf.invalido}")
         String cpf,
-        @NotNull @Valid DadosEndereco endereco
+        @NotNull(message = "{endereco.obrigatorio}")
+        @Valid DadosEndereco endereco
 ){}
 
