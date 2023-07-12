@@ -1,14 +1,9 @@
 package med.buriti.api.controller;
 
 import jakarta.transaction.Transactional;
-import med.buriti.api.Repository.MedicoRepository;
 import med.buriti.api.Repository.PacienteRepository;
-import med.buriti.api.domain.medico.DadosAtualizacaoMedicoDto;
-import med.buriti.api.domain.medico.DadosCadastroMedicoDto;
-import med.buriti.api.domain.medico.DadosListagemMedico;
-import med.buriti.api.domain.medico.Medico;
-import med.buriti.api.domain.paciente.DadosAtualizacaoPacienteDto;
-import med.buriti.api.domain.paciente.DadosCadastroPacienteDto;
+import med.buriti.api.domain.medico.DadosAtualizacaoMedico;
+import med.buriti.api.domain.paciente.DadosCadastroPaciente;
 import med.buriti.api.domain.paciente.DadosListagemPaciente;
 import med.buriti.api.domain.paciente.Paciente;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -32,13 +27,13 @@ public class PacienteController {
 
     @PostMapping
     @Transactional
-    public Paciente cadastrar(@RequestBody DadosCadastroPacienteDto dados){
+    public Paciente cadastrar(@RequestBody DadosCadastroPaciente dados){
         return pacienteRepository.save(new Paciente(dados));
     }
 
     @PutMapping
     @Transactional
-    public void atualizar(@RequestBody DadosAtualizacaoMedicoDto dados){
+    public void atualizar(@RequestBody DadosAtualizacaoMedico dados){
         Paciente paciente = pacienteRepository.getReferenceById(dados.id());
         paciente.atualizarInformacoes(dados);
     }

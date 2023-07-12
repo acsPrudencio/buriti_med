@@ -4,7 +4,7 @@ package med.buriti.api.domain.paciente;
 import jakarta.persistence.*;
 import lombok.*;
 import med.buriti.api.domain.endereco.Endereco;
-import med.buriti.api.domain.medico.DadosAtualizacaoMedicoDto;
+import med.buriti.api.domain.medico.DadosAtualizacaoMedico;
 
 @Table(name = "pacientes")
 @Entity(name = "Paciente")
@@ -31,7 +31,7 @@ public class Paciente {
     private Boolean ativo;
 
 
-    public Paciente(DadosCadastroPacienteDto dados) {
+    public Paciente(DadosCadastroPaciente dados) {
         this.ativo = true;
         this.nome = dados.nome();
         this.email = dados.email();
@@ -39,7 +39,7 @@ public class Paciente {
         this.telefone = dados.telefone();
     }
 
-    public void atualizarInformacoes(DadosAtualizacaoMedicoDto dados) {
+    public void atualizarInformacoes(DadosAtualizacaoMedico dados) {
         if (dados.nome() != null) {
             this.nome = dados.nome();
         }
