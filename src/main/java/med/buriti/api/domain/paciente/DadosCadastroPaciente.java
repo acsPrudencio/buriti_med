@@ -4,10 +4,11 @@ package med.buriti.api.domain.paciente;
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.NotNull;
 import med.buriti.api.domain.endereco.DadosEndereco;
 import org.hibernate.validator.constraints.br.CPF;
+
+import java.time.LocalDate;
 
 public record DadosCadastroPaciente(
         @NotBlank(message = "{nome.obrigatorio}")
@@ -21,6 +22,8 @@ public record DadosCadastroPaciente(
         @CPF(message = "{cpf.invalido}")
         String cpf,
         @NotNull(message = "{endereco.obrigatorio}")
-        @Valid DadosEndereco endereco
+        @Valid DadosEndereco endereco,
+        @NotNull
+        LocalDate dataNascimento
 ){}
 

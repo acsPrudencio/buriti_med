@@ -6,6 +6,10 @@ import lombok.*;
 import med.buriti.api.domain.endereco.Endereco;
 import med.buriti.api.domain.medico.DadosAtualizacaoMedico;
 
+import java.time.LocalDate;
+import java.time.Period;
+import java.util.Objects;
+
 @Table(name = "pacientes")
 @Entity(name = "Paciente")
 @Getter
@@ -22,7 +26,7 @@ public class Paciente {
     private String cpf;
     private String email;
     private String telefone;
-
+    private LocalDate dataNascimento;
 
     @Embedded
     private Endereco endereco;
@@ -38,6 +42,7 @@ public class Paciente {
         this.endereco = new Endereco(dados.endereco());
         this.telefone = dados.telefone();
         this.cpf = dados.cpf();
+        this.dataNascimento = dados.dataNascimento();
     }
 
     public void atualizarInformacoes(DadosAtualizacaoMedico dados) {
@@ -55,6 +60,10 @@ public class Paciente {
 
     public void excluir() {
         this.ativo = false;
+    }
+
+    public Integer getIdade(){
+        return Objects.nonNull(dataNascimento)?Period.between(dataNascimento, LocalDate.now()).getYears():null;
     }
 }
 
