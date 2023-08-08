@@ -3,6 +3,9 @@ package med.buriti.api.domain.medico;
 import jakarta.persistence.*;
 import lombok.*;
 import med.buriti.api.domain.endereco.Endereco;
+import med.buriti.api.domain.medico.dto.DadosAtualizacaoMedico;
+import med.buriti.api.domain.medico.dto.DadosCadastroMedico;
+import med.buriti.api.domain.medico.enums.Especialidade;
 
 @Table(name = "medicos")
 @Entity(name = "Medico")

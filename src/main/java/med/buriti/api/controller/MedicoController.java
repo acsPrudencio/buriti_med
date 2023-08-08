@@ -2,10 +2,10 @@ package med.buriti.api.controller;
 
 import jakarta.transaction.Transactional;
 import jakarta.validation.Valid;
-import med.buriti.api.domain.medico.DadosAtualizacaoMedico;
-import med.buriti.api.domain.medico.DadosCadastroMedico;
-import med.buriti.api.domain.medico.DadosDetalhamentoMedico;
-import med.buriti.api.domain.medico.DadosListagemMedico;
+import med.buriti.api.domain.medico.dto.DadosAtualizacaoMedico;
+import med.buriti.api.domain.medico.dto.DadosCadastroMedico;
+import med.buriti.api.domain.medico.dto.DadosDetalhamentoMedico;
+import med.buriti.api.domain.medico.dto.DadosListagemMedico;
 import med.buriti.api.service.medico.MedicoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;

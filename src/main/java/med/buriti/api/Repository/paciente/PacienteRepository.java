@@ -1,4 +1,4 @@
-package med.buriti.api.Repository;
+package med.buriti.api.Repository.paciente;
 
 import med.buriti.api.domain.medico.Medico;
 import med.buriti.api.domain.paciente.Paciente;

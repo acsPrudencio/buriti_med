@@ -1,11 +1,11 @@
 package med.buriti.api.service.paciente.impl;
 
 import jakarta.transaction.Transactional;
-import med.buriti.api.Repository.PacienteRepository;
-import med.buriti.api.domain.medico.DadosAtualizacaoMedico;
-import med.buriti.api.domain.paciente.DadosCadastroPaciente;
-import med.buriti.api.domain.paciente.DadosDetalhamentoPaciente;
-import med.buriti.api.domain.paciente.DadosListagemPaciente;
+import med.buriti.api.Repository.paciente.PacienteRepository;
+import med.buriti.api.domain.medico.dto.DadosAtualizacaoMedico;
+import med.buriti.api.domain.paciente.dto.DadosCadastroPaciente;
+import med.buriti.api.domain.paciente.dto.DadosDetalhamentoPaciente;
+import med.buriti.api.domain.paciente.dto.DadosListagemPaciente;
 import med.buriti.api.domain.paciente.Paciente;
 import med.buriti.api.service.paciente.PacienteService;
 import org.springframework.beans.factory.annotation.Autowired;

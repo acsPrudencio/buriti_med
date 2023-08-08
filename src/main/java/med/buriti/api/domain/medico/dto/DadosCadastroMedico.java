@@ -1,11 +1,12 @@
-package med.buriti.api.domain.medico;
+package med.buriti.api.domain.medico.dto;
 
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Pattern;
-import med.buriti.api.domain.endereco.DadosEndereco;
+import med.buriti.api.domain.endereco.dto.DadosEndereco;
+import med.buriti.api.domain.medico.enums.Especialidade;
 
 public record DadosCadastroMedico(
         @NotBlank(message = "{nome.obrigatorio}")

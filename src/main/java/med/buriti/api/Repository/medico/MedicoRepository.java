@@ -1,4 +1,4 @@
-package med.buriti.api.Repository;
+package med.buriti.api.Repository.medico;
 
 import med.buriti.api.domain.medico.Medico;
 import org.springframework.data.domain.Page;

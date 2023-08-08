@@ -1,6 +1,8 @@
-package med.buriti.api.domain.medico;
+package med.buriti.api.domain.medico.dto;
 
 import med.buriti.api.domain.endereco.Endereco;
+import med.buriti.api.domain.medico.enums.Especialidade;
+import med.buriti.api.domain.medico.Medico;
 
 public record DadosDetalhamentoMedico(Long id, String nome, String email, String crm, String telefone, Especialidade especialidade, Endereco endereco) {
     public DadosDetalhamentoMedico (Medico medico) {

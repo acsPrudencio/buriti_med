@@ -1,9 +1,9 @@
 package med.buriti.api.service.medico;
 
-import med.buriti.api.domain.medico.DadosAtualizacaoMedico;
-import med.buriti.api.domain.medico.DadosCadastroMedico;
-import med.buriti.api.domain.medico.DadosDetalhamentoMedico;
-import med.buriti.api.domain.medico.DadosListagemMedico;
+import med.buriti.api.domain.medico.dto.DadosAtualizacaoMedico;
+import med.buriti.api.domain.medico.dto.DadosCadastroMedico;
+import med.buriti.api.domain.medico.dto.DadosDetalhamentoMedico;
+import med.buriti.api.domain.medico.dto.DadosListagemMedico;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 

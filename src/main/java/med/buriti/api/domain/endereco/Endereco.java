@@ -4,6 +4,7 @@ import jakarta.persistence.Embeddable;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import med.buriti.api.domain.endereco.dto.DadosEndereco;
 
 @Embeddable
 @Getter

@@ -4,7 +4,8 @@ package med.buriti.api.domain.paciente;
 import jakarta.persistence.*;
 import lombok.*;
 import med.buriti.api.domain.endereco.Endereco;
-import med.buriti.api.domain.medico.DadosAtualizacaoMedico;
+import med.buriti.api.domain.medico.dto.DadosAtualizacaoMedico;
+import med.buriti.api.domain.paciente.dto.DadosCadastroPaciente;
 
 import java.time.LocalDate;
 import java.time.Period;
