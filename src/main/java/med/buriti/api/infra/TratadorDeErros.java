@@ -11,20 +11,22 @@ import java.util.List;
 
 @RestControllerAdvice
 public class TratadorDeErros {
+
     @ExceptionHandler(EntityNotFoundException.class)
-    public ResponseEntity tratarErro404(){
+    public ResponseEntity tratarErro404() {
         return ResponseEntity.notFound().build();
     }
 
     @ExceptionHandler(MethodArgumentNotValidException.class)
-    public ResponseEntity tratarErro400(MethodArgumentNotValidException ex){
-        List<FieldError> fieldErrors = ex.getFieldErrors();
-        return ResponseEntity.badRequest().body(fieldErrors.stream().map(DadosErroValidacao::new).toList());
+    public ResponseEntity tratarErro400(MethodArgumentNotValidException ex) {
+        var erros = ex.getFieldErrors();
+        return ResponseEntity.badRequest().body(erros.stream().map(DadosErroValidacao::new).toList());
     }
 
-    private record DadosErroValidacao(String campo, String mensagem){
-        public DadosErroValidacao(FieldError dados){
-            this(dados.getField(), dados.getDefaultMessage());
+    private record DadosErroValidacao(String campo, String mensagem) {
+        public DadosErroValidacao(FieldError erro) {
+            this(erro.getField(), erro.getDefaultMessage());
         }
     }
+
 }

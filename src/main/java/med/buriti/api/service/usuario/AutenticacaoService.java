@@ -1,4 +1,4 @@
-package med.buriti.api.domain.usuario;
+package med.buriti.api.service.usuario;
 
 import med.buriti.api.Repository.usuario.UsuarioRepository;
 import org.springframework.beans.factory.annotation.Autowired;
