@@ -70,8 +70,10 @@ O controle de acesso é baseado nas permissões dos usuários. Certifique-se de 
 📋 Requisitos
 
 * Java 17
-* Maven
 * PostgreSQL
+* Spring Boot 3
+* Maven
+
 
 🛠️ Tecnologias  
 * Spring Boot
